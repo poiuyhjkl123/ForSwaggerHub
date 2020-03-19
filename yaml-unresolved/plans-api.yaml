@@ -1,6 +1,6 @@
 openapi: '3.0.0'
 info:
-  title: Plan API test
+  title: Plan API
   version: "1.0.0"
   description: APIs to fetch plans, plan, plan stats and plan investments. These APIs will be prefixed by the advisor scope since api authorization and permissioning are not implemented.
 servers:

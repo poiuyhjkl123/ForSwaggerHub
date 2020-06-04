@@ -3,13 +3,13 @@
   "info" : {
     "description" : "This is a sample Orders API based on the Orders demo from\n[https://smartbear.com/](https://smartbear.com).\n",
     "version" : "2",
-    "title" : "Orders API",
+    "title" : "Orders API Test",
     "contact" : {
       "email" : "test@smartbear.com"
     }
   },
   "host" : "virtserver.swaggerhub.com",
-  "basePath" : "/Julia_org/Orders/1.0.1",
+  "basePath" : "/Julia_ORG/Orders/2",
   "schemes" : [ "https" ],
   "paths" : {
     "/order" : {
@@ -31,39 +31,18 @@
               "type" : "file",
               "example" : "https://github.com/rsms/node-imagemagick/archive/master.zip"
             }
-          },
-          "default" : {
-            "description" : "Unexpected error"
           }
-        }
-      },
-      "post" : {
-        "tags" : [ "Order" ],
-        "summary" : "Add a new purchase order to the DB",
-        "operationId" : "placeOrder",
-        "produces" : [ "application/json", "application/xml" ],
-        "parameters" : [ {
-          "in" : "body",
-          "name" : "body",
-          "description" : "order placed for purchasing the product",
-          "required" : true,
-          "schema" : {
-            "$ref" : "#/definitions/Order_2"
-          }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "successful operation",
-            "schema" : {
-              "$ref" : "#/definitions/Order"
+        },
+        "x-amazon-apigateway-integration" : {
+          "passthroughBehavior" : "when_no_match",
+          "httpMethod" : "GET",
+          "uri" : "https://virtserver.swaggerhub.com/Julia_org/Orders/1.0.1/order",
+          "responses" : {
+            "default" : {
+              "statusCode" : "200"
             }
           },
-          "400" : {
-            "description" : "Invalid Order"
-          },
-          "default" : {
-            "description" : "Unexpected error"
-          }
+          "type" : "http"
         }
       }
     },
@@ -80,7 +59,7 @@
           "description" : "Order ID",
           "required" : true,
           "type" : "integer",
-          "minimum" : 1,
+          "minimum" : 1.0,
           "format" : "int64"
         } ],
         "responses" : {
@@ -95,10 +74,21 @@
           },
           "404" : {
             "description" : "Order not found"
-          },
-          "default" : {
-            "description" : "Unexpected error"
           }
+        },
+        "x-amazon-apigateway-integration" : {
+          "passthroughBehavior" : "when_no_match",
+          "httpMethod" : "GET",
+          "uri" : "https://virtserver.swaggerhub.com/Julia_org/Orders/1.0.1/order/{orderId}",
+          "requestParameters" : {
+            "integration.request.path.orderId" : "method.request.path.orderId"
+          },
+          "responses" : {
+            "default" : {
+              "statusCode" : "200"
+            }
+          },
+          "type" : "http"
         }
       },
       "put" : {
@@ -113,7 +103,7 @@
           "description" : "Order ID of the order that needs to be updated",
           "required" : true,
           "type" : "integer",
-          "minimum" : 1,
+          "minimum" : 1.0,
           "format" : "int64"
         }, {
           "in" : "body",
@@ -136,10 +126,21 @@
           },
           "404" : {
             "description" : "Order not found"
-          },
-          "default" : {
-            "description" : "Unexpected error"
           }
+        },
+        "x-amazon-apigateway-integration" : {
+          "passthroughBehavior" : "when_no_match",
+          "httpMethod" : "PUT",
+          "uri" : "https://virtserver.swaggerhub.com/Julia_org/Orders/1.0.1/order/{orderId}",
+          "requestParameters" : {
+            "integration.request.path.orderId" : "method.request.path.orderId"
+          },
+          "responses" : {
+            "default" : {
+              "statusCode" : "200"
+            }
+          },
+          "type" : "http"
         }
       },
       "delete" : {
@@ -154,7 +155,7 @@
           "description" : "ID of the order that needs to be deleted",
           "required" : true,
           "type" : "integer",
-          "minimum" : 1,
+          "minimum" : 1.0,
           "format" : "int64"
         } ],
         "responses" : {
@@ -166,10 +167,21 @@
           },
           "404" : {
             "description" : "Order not found"
-          },
-          "default" : {
-            "description" : "Unexpected error"
           }
+        },
+        "x-amazon-apigateway-integration" : {
+          "passthroughBehavior" : "when_no_match",
+          "httpMethod" : "DELETE",
+          "uri" : "https://virtserver.swaggerhub.com/Julia_org/Orders/1.0.1/order/{orderId}",
+          "requestParameters" : {
+            "integration.request.path.orderId" : "method.request.path.orderId"
+          },
+          "responses" : {
+            "default" : {
+              "statusCode" : "200"
+            }
+          },
+          "type" : "http"
         }
       }
     }
@@ -216,53 +228,11 @@
           "format" : "date-time"
         }
       }
-    },
-    "Order_2" : {
-      "type" : "object",
-      "properties" : {
-        "orderID" : {
-          "type" : "integer",
-          "format" : "int32",
-          "example" : 1
-        },
-        "customerName" : {
-          "type" : "string",
-          "example" : "Julia Kolosova"
-        },
-        "product" : {
-          "type" : "string",
-          "example" : "MyMoney"
-        },
-        "quantity" : {
-          "type" : "integer",
-          "format" : "int32"
-        },
-        "orderDate" : {
-          "type" : "string",
-          "format" : "date-time"
-        },
-        "street" : {
-          "type" : "string"
-        },
-        "city" : {
-          "type" : "string"
-        },
-        "state" : {
-          "type" : "string"
-        },
-        "expirationDate" : {
-          "type" : "string",
-          "format" : "date-time"
-        },
-        "testprop" : {
-          "type" : "string"
-        }
-      }
     }
   },
   "externalDocs" : {
     "description" : "Find out more about Swagger",
     "url" : "http://swagger.io"
   },
-  "x-azure-api-id" : "sh-1545237846865"
+  "x-aws-api-id" : "gtsvsb8qdk"
 }

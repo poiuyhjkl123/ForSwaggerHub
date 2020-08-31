@@ -1,0 +1,12 @@
+openapi: 3.0.0
+info:
+  title: Test
+  description: Test
+  version: 1.0.0
+servers:
+- url: https://virtserver.swaggerhub.com/SmartBear-CC/ChatJuliaGasQ40/1.0.0
+  description: SwaggerHub API Auto Mocking
+- url: https://virtserver.swaggerhub.com/SQ4.0/TestAPI/1.0.0
+  description: SwaggerHub API Auto Mocking
+paths: {}
+components: {}

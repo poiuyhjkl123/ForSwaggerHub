@@ -3,14 +3,18 @@ import { Configuration } from './configuration';
 import { HttpClient } from '@angular/common/http';
 
 
-import { PolicyService } from './api/policy.service';
+import { MembersService } from './api/members.service';
+import { OrgService } from './api/org.service';
+import { TeamsService } from './api/teams.service';
 
 @NgModule({
   imports:      [],
   declarations: [],
   exports:      [],
   providers: [
-    PolicyService ]
+    MembersService,
+    OrgService,
+    TeamsService ]
 })
 export class ApiModule {
     public static forRoot(configurationFactory: () => Configuration): ModuleWithProviders {

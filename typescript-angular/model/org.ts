@@ -9,8 +9,10 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  */
+import { UpsertOrg } from './upsertOrg';
 
-export interface ErrorInfo { 
-    msg?: string;
-    key: string;
+export interface Org extends UpsertOrg { 
+    id: string;
+    teamCount?: number;
+    memberCount?: number;
 }

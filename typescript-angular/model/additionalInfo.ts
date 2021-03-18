@@ -10,7 +10,9 @@
  * Do not edit the class manually.
  */
 
-export interface ErrorInfo { 
-    msg?: string;
-    key: string;
+export interface AdditionalInfo { 
+    tenantId?: string;
+    addedBy?: string;
+    lastLogin?: number;
+    addedTs?: number;
 }

@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 
-export interface ErrorInfo { 
-    msg?: string;
-    key: string;
+export interface UpsertOrg { 
+    name?: string;
+    domains?: Array<string>;
 }

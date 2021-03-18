@@ -9,8 +9,7 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  */
+import { MemberTeams } from './memberTeams';
+import { UserEnabled } from './userEnabled';
 
-export interface ErrorInfo { 
-    msg?: string;
-    key: string;
-}
+export type UpsertMember = MemberTeams | UserEnabled;

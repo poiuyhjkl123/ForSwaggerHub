@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-export interface ErrorInfo { 
-    msg?: string;
-    key: string;
+export interface TeamOwner { 
+    owner: string;
 }

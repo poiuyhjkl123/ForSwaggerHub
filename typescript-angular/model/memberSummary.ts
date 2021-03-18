@@ -9,8 +9,9 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  */
+import { UserEmail } from './userEmail';
+import { UserId } from './userId';
 
-export interface ErrorInfo { 
-    msg?: string;
-    key: string;
+export interface MemberSummary extends UserId { 
+    email: string;
 }

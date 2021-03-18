@@ -9,8 +9,13 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  */
+import { Persona } from './persona';
+import { Timezone } from './timezone';
+import { UserName } from './userName';
 
-export interface ErrorInfo { 
-    msg?: string;
-    key: string;
+export interface BaseProfile extends UserName { 
+    workStart?: number;
+    workEnd?: number;
+    timeZone?: Timezone;
+    personas?: Array<Persona>;
 }

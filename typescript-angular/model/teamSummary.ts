@@ -9,8 +9,14 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  */
+import { AdminTeam } from './adminTeam';
+import { MemberSummary } from './memberSummary';
+import { TeamId } from './teamId';
+import { TeamName } from './teamName';
+import { TeamOwnerSummary } from './teamOwnerSummary';
 
-export interface ErrorInfo { 
-    msg?: string;
-    key: string;
+export interface TeamSummary extends TeamId { 
+    name: string;
+    admin?: boolean;
+    owner?: MemberSummary;
 }

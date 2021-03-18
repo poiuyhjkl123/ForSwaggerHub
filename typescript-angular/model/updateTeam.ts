@@ -9,8 +9,9 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  */
+import { AddOrRemoveMember } from './addOrRemoveMember';
+import { TeamName } from './teamName';
+import { TeamOwner } from './teamOwner';
+import { TeamParent } from './teamParent';
 
-export interface ErrorInfo { 
-    msg?: string;
-    key: string;
-}
+export type UpdateTeam = TeamName | TeamOwner | TeamParent | AddOrRemoveMember;

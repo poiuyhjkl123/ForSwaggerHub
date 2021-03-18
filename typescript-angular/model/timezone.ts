@@ -10,7 +10,4 @@
  * Do not edit the class manually.
  */
 
-export interface ErrorInfo { 
-    msg?: string;
-    key: string;
-}
+export type Timezone = string;

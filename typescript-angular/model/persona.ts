@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 
-export interface ErrorInfo { 
-    msg?: string;
-    key: string;
+export interface Persona { 
+    id?: string;
+    name?: string;
 }

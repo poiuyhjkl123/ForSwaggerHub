@@ -9,8 +9,8 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  */
+import { TeamSummary } from './teamSummary';
 
-export interface ErrorInfo { 
-    msg?: string;
-    key: string;
+export interface MemberTeamsSummary { 
+    teams?: Array<TeamSummary>;
 }

@@ -9,8 +9,9 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  */
+import { MemberTeams } from './memberTeams';
+import { UserEmail } from './userEmail';
 
-export interface ErrorInfo { 
-    msg?: string;
-    key: string;
+export interface CreateMember extends MemberTeams { 
+    email: string;
 }

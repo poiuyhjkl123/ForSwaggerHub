@@ -9,8 +9,7 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  */
+import { TeamParentForTeamCreation } from './teamParentForTeamCreation';
 
-export interface ErrorInfo { 
-    msg?: string;
-    key: string;
+export interface TeamParent extends TeamParentForTeamCreation { 
 }
